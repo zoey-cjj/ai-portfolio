@@ -3,72 +3,52 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AI PM Portfolio – Zoey</title>
+<title>AI Product Portfolio – Zoey</title>
 
 <style>
-/* ===== Glassmorphism Extreme ===== */
+/* ===== Light Glass Theme ===== */
 :root {
-  --glass: rgba(255,255,255,0.08);
-  --glass-strong: rgba(255,255,255,0.14);
-  --border: rgba(255,255,255,0.18);
-  --blur: 18px;
-  --primary: #818cf8;
-  --accent: #22d3ee;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
+  --bg: linear-gradient(135deg, #f0f4ff, #eef2ff);
+  --glass: rgba(255, 255, 255, 0.65);
+  --border: rgba(99, 102, 241, 0.25);
+  --blur: 14px;
+  --primary: #4f46e5;
+  --text: #1f2937;
+  --muted: #6b7280;
 }
 
 * { box-sizing: border-box; font-family: Inter, system-ui, sans-serif; }
 
 body {
   margin: 0;
-  background: radial-gradient(circle at 20% 20%, #0f172a, #020617, #000);
+  background: var(--bg);
   color: var(--text);
   scroll-behavior: smooth;
 }
 
 /* ===== Cover ===== */
 .cover {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 100px 20px;
   text-align: center;
-  padding: 40px;
+  background: linear-gradient(120deg, #e0e7ff, #f0f4ff);
 }
 
 .cover h1 {
-  font-size: 3.6rem;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  color: transparent;
+  font-size: 3rem;
+  color: var(--primary);
 }
 
-.typing {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: var(--muted;
-  border-right: 2px solid var(--accent);
-  white-space: nowrap;
-  overflow: hidden;
-  width: 28ch;
-  animation: typing 4s steps(28), blink .6s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 28ch }
-}
-@keyframes blink {
-  50% { border-color: transparent }
+.cover p {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: var(--muted);
 }
 
 /* ===== Container ===== */
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
 /* ===== Glass Card ===== */
@@ -77,50 +57,56 @@ body {
   border: 1px solid var(--border);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
-  border-radius: 20px;
+  border-radius: 18px;
   padding: 36px;
   margin-bottom: 48px;
-  transition: transform .35s ease, box-shadow .35s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
-.glass:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0,0,0,.45);
-}
-
-/* ===== Table of Contents ===== */
+/* ===== TOC ===== */
 .toc {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .toc a {
   display: block;
   padding: 24px;
-  border-radius: 16px;
-  background: var(--glass-strong);
-  color: #fff;
+  border-radius: 14px;
+  background: white;
+  color: var(--primary);
   text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
   transition: .3s;
 }
 
 .toc a:hover {
   background: var(--primary);
+  color: white;
 }
 
 /* ===== Typography ===== */
-h2 { font-size: 1.9rem; margin-bottom: 16px; color: #fff; }
-h3 { color: var(--accent); margin-top: 24px; }
-p { color: var(--muted); }
+h2 { font-size: 1.8rem; margin-bottom: 16px; color: var(--primary); }
+h3 { margin-top: 24px; color: #4338ca; }
+p { color: var(--muted); line-height: 1.7; }
 ul { padding-left: 20px; color: var(--muted); }
 
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 40px;
-  color: var(--muted);
-  font-size: .9rem;
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background: #f5f7ff;
+  color: var(--primary);
 }
 </style>
 </head>
@@ -130,78 +116,125 @@ footer {
 <!-- ===== Cover ===== -->
 <section class="cover">
   <h1>AI Product Portfolio</h1>
-  <div class="typing">LLM · RAG · Copilot · Evaluation</div>
-  <p style="margin-top:30px; color:var(--muted);">
-    Zoey · 从 UI / 支付 PM 到 AI Product Manager
-  </p>
+  <p>专注 LLM / RAG / Copilot 的产品落地 · Zoey</p>
 </section>
 
-<!-- ===== Table of Contents ===== -->
+<!-- ===== TOC ===== -->
 <div class="container">
-  <h2>📂 目录</h2>
   <div class="toc">
     <a href="#about">👤 关于我</a>
-    <a href="#overview">📌 项目总览</a>
+    <a href="#overview">📂 项目总览</a>
     <a href="#case1">📘 Case 1：智能问答系统</a>
     <a href="#case2">📘 Case 2：内容生成 Copilot</a>
     <a href="#eval">🧪 评测体系</a>
   </div>
 </div>
 
-<!-- ===== About ===== -->
+<!-- ===== About Me ===== -->
 <section id="about" class="container glass">
   <h2>👤 关于我</h2>
   <p>
-    擅长将大模型能力转化为可落地、可评估的业务产品。<br/>
-    核心能力：Prompt / RAG / Agent / Eval / PRD / 指标体系。
+    <strong>一句话定位：</strong>擅长将大模型能力转化为可落地、可评估的业务产品
+  </p>
+  <p>
+    <strong>核心能力栈：</strong><br/>
+    LLM 应用：Prompt / RAG / Agent / Eval<br/>
+    产品能力：PRD / 指标体系 / A/B 测试<br/>
+    行业经验：ToB SaaS / 支付 / 电商
   </p>
 </section>
 
 <!-- ===== Project Overview ===== -->
 <section id="overview" class="container glass">
-  <h2>📌 项目总览</h2>
-  <ul>
-    <li><strong>Case 1：智能问答系统（RAG）</strong> — 企业知识库，降低人工成本</li>
-    <li><strong>Case 2：内容生成 Copilot</strong> — 运营提效，提升生产效率</li>
-    <li><strong>Case 3：AI 风控助手</strong> — 安全合规，降低漏审风险</li>
-  </ul>
+  <h2>📂 项目总览</h2>
+  <table>
+    <tr>
+      <th>项目</th>
+      <th>场景</th>
+      <th>核心价值</th>
+    </tr>
+    <tr>
+      <td>Case 1：智能问答系统</td>
+      <td>企业知识库</td>
+      <td>降低人工咨询成本</td>
+    </tr>
+    <tr>
+      <td>Case 2：内容生成 Copilot</td>
+      <td>运营提效</td>
+      <td>提升生产效率</td>
+    </tr>
+  </table>
 </section>
 
 <!-- ===== Case 1 ===== -->
 <section id="case1" class="container glass">
   <h2>📘 Case 1：智能问答系统（RAG）</h2>
-  <h3>背景 & 目标</h3>
+
+  <h3>1️⃣ 项目背景</h3>
   <p>
     客服人力占运营成本 35%，70% 问题重复。<br/>
     目标：自动解决率 ≥ 70%，幻觉率 ≤ 5%。
   </p>
-  <h3>系统简图</h3>
+
+  <h3>2️⃣ 为什么必须用 AI？</h3>
+  <p>
+    规则引擎无法覆盖复杂语义；人工不可扩展。
+  </p>
+
+  <h3>3️⃣ 方案设计</h3>
   <p>
     用户输入 → 意图识别 → 检索(RAG) → LLM 生成 → 安全过滤 → 输出
   </p>
+
+  <h3>4️⃣ 评测体系</h3>
+  <ul>
+    <li>准确性 / 完整性 / 幻觉 / 合规</li>
+    <li>Golden Set：20 条典型问题</li>
+  </ul>
 </section>
 
 <!-- ===== Case 2 ===== -->
 <section id="case2" class="container glass">
   <h2>📘 Case 2：内容生成 Copilot</h2>
+
+  <h3>1️⃣ 背景</h3>
   <p>
-    面向运营场景，通过 Prompt + 模板 + 人工审核闭环，实现高效内容生产。
+    运营内容生产周期长，人工成本高。
+  </p>
+
+  <h3>2️⃣ 产品方案</h3>
+  <p>
+    Prompt + 模板 + 人工审核闭环
+  </p>
+
+  <h3>3️⃣ 成功指标</h3>
+  <p>
+    生产效率提升 ≥ 40%，人工修改率 ≤ 20%
   </p>
 </section>
 
 <!-- ===== Eval ===== -->
 <section id="eval" class="container glass">
-  <h2>🧪 评测体系</h2>
-  <ul>
-    <li>准确性 / 完整性 / 幻觉 / 合规性</li>
-    <li>Golden Set：20 条典型问题</li>
-    <li>评分 Rubric：5 / 3 / 1 分制</li>
-  </ul>
+  <h2>🧪 评测体系（Eval）</h2>
+  <table>
+    <tr>
+      <th>分数</th>
+      <th>标准</th>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>完全正确，无幻觉</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>部分正确</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>错误 / 有害</td>
+    </tr>
+  </table>
 </section>
-
-<footer>
-  © 2025 Zoey · AI Product Portfolio
-</footer>
 
 </body>
 </html>
