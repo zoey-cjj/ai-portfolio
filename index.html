@@ -1,267 +1,158 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Product Portfolio – Zoey</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #f3f4f6;
-            --text: #111827;
-            --light-text: #6b7280;
-            --border: #e5e7eb;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Product Portfolio – Zoey</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+:root {
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --primary:#4f46e5;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --radius:12px;
+}
+* {box-sizing:border-box;font-family:Inter,"Segoe UI",sans-serif;}
+body {margin:0;background:var(--bg);color:var(--text);line-height:1.7;}
+a {color:var(--primary);text-decoration:none;}
+.container {max-width:1100px;margin:auto;padding:40px 20px;}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: #fff;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+/* Header */
+header {text-align:center;padding:60px 0;}
+header h1 {font-size:2.8rem;background:linear-gradient(90deg,var(--primary),#06b6d4);-webkit-background-clip:text;color:transparent;}
+.subtitle {color:var(--muted);margin-top:10px;font-size:1.1rem;}
 
-        header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 40px;
-        }
+/* Nav */
+nav {margin-top:20px;}
+nav a {margin:0 12px;font-weight:500;}
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
+/* Cards */
+.card {
+  background:var(--card);
+  padding:32px;
+  border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(0,0,0,0.05);
+  margin-bottom:40px;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.08);
+}
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--light-text);
-            margin-bottom: 20px;
-        }
+/* Section titles */
+h2 {font-size:1.8rem;margin-bottom:20px;border-left:5px solid var(--primary);padding-left:12px;}
+h3 {margin-top:24px;color:var(--primary);}
 
-        nav {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+/* Animations */
+.fade-in {opacity:0;transform:translateY(30px);transition:.6s ease;}
+.fade-in.show {opacity:1;transform:none;}
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            margin-bottom: 50px;
-            padding: 30px;
-            background-color: var(--secondary);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-            margin: 20px 0 10px;
-            color: var(--primary);
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .highlight {
-            background-color: #dbeafe;
-            padding: 15px;
-            border-left: 4px solid var(--primary);
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .contact {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background-color: var(--secondary);
-            border-radius: 8px;
-        }
-
-        .contact p {
-            margin: 5px 0;
-        }
-
-        .contact a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: var(--light-text);
-            font-size: 0.9rem;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            z-index: 100;
-        }
-
-        .back-to-top:hover {
-            background-color: #1d4ed8;
-        }
-
-        /* 响应式 */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+/* Footer */
+footer {text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>AI Product Portfolio – Zoey</h1>
-        <p class="subtitle">转型 AI 产品经理作品集 | 基于 RAG 的族谱知识问答助手
-        <nav>
-            <a href="#case">AI Case</a>
-            <a href="#prompt">Prompt Lab</a>
-            <a href="#about">About Me</a>
-        </nav>
-    </header>
+<div class="container">
 
-    <section id="case">
-        <h2>AI Case：族谱知识问答助手</h2>
-        
-        <h3>背景</h3>
-        我设计了一款面向家族历史爱好者的 AI 产品——「族谱知识问答助手」。用户上传族谱 PDF 或输入文字资料后，系统可理解并回答关于祖先、世系、迁徙、历史事件等问题。产品目标是降低族谱研究门槛，让普通人也能轻松“对话”祖先。
+<header>
+  <h1>AI Product Portfolio</h1>
+  <p class="subtitle">Zoey · 从 UI / 支付 PM 到 AI Product Manager</p>
+  <nav>
+    <a href="#case1">Case 1 族谱 RAG</a>
+    <a href="#case2">Case 2 支付风控</a>
+    <a href="#about">About Me</a>
+  </nav>
+</header>
 
-        <h3>解决方案</h3>
-        产品基于 RAG（检索增强生成）架构，结合向量数据库与 LLM，实现精准、可追溯的问答体验。
+<!-- Case 1 -->
+<section id="case1" class="card fade-in">
+  <h2>Case 1｜族谱知识问答助手（主 Case）</h2>
 
-        <div class="highlight">
-            <strong>RAG 架构图：</strong>
-            用户提问 → 向量检索（相似片段）→ 上下文拼接 → LLM 生成答案 → 返回结构化响应
-            <img src="images/rag-flow.png" alt="RAG流程图" style="max-width: 100%; margin-top: 10px;">
-        </div>
+  <h3>背景</h3>
+  <p>族谱数据多为非结构化文本，用户难以通过关键词检索复杂亲缘关系。</p>
 
-        <h3>产品说明</h3>
-        <ul>
-            <li>支持 PDF/文本上传，自动分块与向量化</li>
-            <li>支持自然语言提问，如“我祖父的出生年份？”</li>
-            <li>答案附带来源片段（可点击查看原文），增强可信度</li>
-            <li>支持多轮对话，保持上下文记忆</li>
-            <li>支持导出问答记录与族谱摘要</li>
-        </ul>
+  <h3>产品目标</h3>
+  <ul>
+    <li>自然语言提问，降低使用门槛</li>
+    <li>回答可追溯，避免模型幻觉</li>
+    <li>支持多代、跨支系关系推理</li>
+  </ul>
 
-        <h3>产品价值</h3>
-        <ul>
-            <li>让族谱研究从“专业门槛”变为“人人可用”</li>
-            <li>提升家族文化传承效率，增强情感连接</li>
-            <li>为后续扩展至“家谱图谱可视化”“跨家族关系分析”打下基础</li>
-        </ul>
-    </section>
+  <h3>RAG 架构</h3>
+  <p>
+    文档解析 → 分块 → Embedding → 向量检索 → LLM 生成 → 来源标注
+  </p>
 
-    <section id="prompt">
-        <h2>Prompt Lab：族谱问答助手</h2>
-        
-        <h3>System Prompt（系统角色）</h3>
-        <div class="highlight">
-            你是一位专业的族谱研究员助手，擅长从历史文献中提取关键信息并回答用户问题。请基于提供的上下文（族谱内容）进行准确、有依据的回答。如果信息不足，请诚实说明，不要编造。回答需清晰、有条理，并标注信息来源段落。
-        </div>
+  <h3>Prompt 设计</h3>
+  <p>
+    System Prompt 明确角色与约束；User Prompt 注入检索片段与用户问题。
+  </p>
 
-        <h3>User Prompt（用户提问模板）</h3>
-        <div class="highlight">
-            问题：{{用户输入的问题}}
-            上下文：{{检索到的相关族谱片段}}
-            请根据上述上下文，回答用户问题。要求：
-            - 答案简洁、准确、有依据
-            - 如需引用原文，请标注段落编号（如：第3段）
-            - 若信息不足，请回复“暂无足够信息”
-        </div>
-    </section>
+  <h3>产品边界</h3>
+  <p>
+    当前支持事实型查询，不支持主观推测与编造。
+  </p>
+</section>
 
-    <section id="about">
-        <h2>About Me：从 UI 到 AI PM 的转型之路</h2>
-        
-        <h3>我的背景</h3>
-        我原本是一名 UI/UX 设计师，拥有 3 年互联网产品设计经验，专注于用户研究与界面体验优化。在参与多个 AI 项目后，我被“产品如何用技术解决真实问题”所吸引，开始系统学习 AI 产品方法论，包括 RAG 架构、Prompt Engineering、模型评估等。
+<!-- Case 2 -->
+<section id="case2" class="card fade-in">
+  <h2>Case 2｜中东支付风控助手（辅 Case）</h2>
 
-        <h3>为什么转型 AI PM？</h3>
-        我希望从“设计界面”转向“设计智能体验”，用产品思维驱动技术落地，让 AI 真正服务于人。族谱问答助手是我第一个完整从 0 到 1 的 AI 产品实践，涵盖需求分析、架构设计、Prompt 优化、用户场景测试等环节。
+  <h3>业务背景</h3>
+  <p>
+    中东地区支付监管复杂，拒付与欺诈风险高，人工审核效率低。
+  </p>
 
-        <h3>我的优势</h3>
-        <ul>
-            <li><strong>用户洞察力</strong>：从 UI 背景出发，擅长挖掘用户真实需求</li>
-            <li><strong>技术理解力</strong>：能读懂 RAG、Prompt、向量数据库等技术原理</li>
-            <li><strong>产品落地能力</strong>：能将技术概念转化为可交付的产品功能</li>
-            <li><strong>学习与迭代</strong>：持续跟进 AI 产品趋势，快速适应变化</li>
-        </ul>
+  <h3>产品目标</h3>
+  <ul>
+    <li>降低人工审核成本</li>
+    <li>提升高风险交易识别准确率</li>
+    <li>减少误杀正常交易</li>
+  </ul>
 
-        <h3>未来目标</h3>
-        成为能驾驭 AI 技术、以用户为中心的产品经理，打造有温度、有智能、有社会价值的 AI 产品。
-    </section>
+  <h3>AI 解法</h3>
+  <p>
+    使用 LLM 解读风控规则与交易上下文，辅助审核人员决策。
+  </p>
 
-    <div class="contact">
-        📫 联系：3262328026@qq.com
-        🐙 GitHub：<a href="https://github.com/zoey-cjj">zoey-cjj</a>
-        💼 作品集：<a href="https://zoey-cjj.github.io/ai-portfolio/">https://zoey-cjj.github.io/ai-portfolio/</a>
-    </div>
+  <h3>产品价值</h3>
+  <ul>
+    <li>审核效率显著提升</li>
+    <li>风控规则可解释性强</li>
+    <li>支持多语言交易场景</li>
+  </ul>
+</section>
 
-    <footer>
-        © 2025 Zoey. All rights reserved. | 本作品集仅用于求职展示，非商业用途。
-    </footer>
+<!-- About -->
+<section id="about" class="card fade-in">
+  <h2>About Me</h2>
+  <p>
+    2 年 UI 设计经验（族谱产品）<br/>
+    1 年兼任产品经理（需求与原型）<br/>
+    1 年产品助理（中东支付 B 端）
+  </p>
+  <p>
+    现转型 AI Product Manager，专注 RAG、Prompt Engineering 与 AI 产品落地。
+  </p>
+</section>
 
-    <a href="#" class="back-to-top">↑ Top</a>
+<footer>
+  © 2025 Zoey · AI Product Portfolio
+</footer>
+
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+}, {threshold:.2});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
 
 </body>
 </html>
