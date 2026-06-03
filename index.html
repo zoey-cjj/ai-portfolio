@@ -1,200 +1,267 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Product Portfolio – [你的名字]</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Portfolio – Zoey</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f3f4f6;
+            --text: #111827;
+            --light-text: #6b7280;
+            --border: #e5e7eb;
+        }
 
-  <style>
-    /* 全局样式 */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* 容器 */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      margin-top: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    /* 头部导航 */
-    header {
-      text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-    }
-    header h1 {
-      margin: 0;
-      color: #2c3e50;
-    }
-    header p {
-      color: #666;
-      margin-top: 5px;
-    }
-    nav {
-      margin-top: 15px;
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #3498db;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
 
-    /* 内容区块 */
-    section {
-      padding: 30px 0;
-      border-bottom: 1px solid #eee;
-    }
-    section:last-of-type {
-      border-bottom: none;
-    }
-    h2 {
-      color: #2c3e50;
-      border-left: 4px solid #3498db;
-      padding-left: 10px;
-    }
-    h3 {
-      color: #34495e;
-    }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
 
-    /* 代码块 */
-    pre {
-      background-color: #f8f9fa;
-      padding: 15px;
-      border-radius: 5px;
-      overflow-x: auto;
-      border: 1px solid #e9ecef;
-      font-family: "Courier New", monospace;
-    }
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
 
-    /* 页脚 */
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #888;
-      font-size: 0.9em;
-    }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    /* 响应式 */
-    @media (max-width: 768px) {
-      .container {
-        margin: 0;
-        border-radius: 0;
-      }
-    }
-  </style>
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: var(--secondary);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background-color: #dbeafe;
+            padding: 15px;
+            border-left: 4px solid var(--primary);
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--secondary);
+            border-radius: 8px;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        .contact a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- 头部 -->
-    <header id="top">
-      <h1>AI Product Portfolio</h1>
-      <p>转型 AI 产品经理作品集 | 基于 RAG 的族谱知识问答助手</p>
-      <nav>
-        <a href="#ai-case">AI 案例</a>
-        <a href="#prompt-lab">Prompt Lab</a>
-        <a href="#about">关于我</a>
-      </nav>
+    <header>
+        <h1>AI Product Portfolio – Zoey</h1>
+        <p class="subtitle">转型 AI 产品经理作品集 | 基于 RAG 的族谱知识问答助手
+        <nav>
+            <a href="#case">AI Case</a>
+            <a href="#prompt">Prompt Lab</a>
+            <a href="#about">About Me</a>
+        </nav>
     </header>
 
-    <!-- AI Case 区块 -->
-    <section id="ai-case">
-      <h2>AI Case – 族谱知识问答助手 (RAG MVP)</h2>
-      <p>
-        <strong>背景：</strong>族谱产品中包含大量人物关系、辈分、世系文本，用户难以通过传统关键词搜索快速定位复杂亲缘关系。
-      </p>
-      <p>
-        <strong>方案：</strong>构建一个基于 RAG (检索增强生成) 的应用。将族谱文本向量化存入知识库，用户提问时，系统检索最相关的片段，交由 LLM 生成解释性回答并注明出处。
-      </p>
+    <section id="case">
+        <h2>AI Case：族谱知识问答助手</h2>
+        
+        <h3>背景</h3>
+        我设计了一款面向家族历史爱好者的 AI 产品——「族谱知识问答助手」。用户上传族谱 PDF 或输入文字资料后，系统可理解并回答关于祖先、世系、迁徙、历史事件等问题。产品目标是降低族谱研究门槛，让普通人也能轻松“对话”祖先。
 
-      <h3>RAG 产品流程图</h3>
-      <p style="color:#666; font-style:italic;">
-        (此处请替换为你的 RAG 流程图图片)<br>
-        建议：在 GitHub 仓库新建 <code>images</code> 文件夹，上传图片后，将下方 src 改为你的图片链接。
-      </p>
-      
-      <!-- 在这里插入你的流程图 -->
-     <img src="./images/rag-flow.png" alt="RAG流程图" style="width:100%; max-width:700px; display:block; margin:0 auto;"> 
+        <h3>解决方案</h3>
+        产品基于 RAG（检索增强生成）架构，结合向量数据库与 LLM，实现精准、可追溯的问答体验。
 
-      <h3>产品说明</h3>
-      <ul>
-        <li><strong>知识库构建：</strong>将 PDF/Word 族谱文档切分为 300-500 Token 的片段，存入向量数据库。</li>
-        <li><strong>检索策略：</strong>使用 Embedding 模型将用户问题向量化，在库中召回 Top-K 相关片段。</li>
-        <li><strong>生成约束：</strong>通过 Prompt 工程，硬性要求模型仅基于检索到的片段作答，无法回答时需声明。</li>
-        <li><strong>MVP 范围：</strong>单轮问答、封闭域知识库、简单事实型查询。</li>
-      </ul>
+        <div class="highlight">
+            <strong>RAG 架构图：</strong>
+            用户提问 → 向量检索（相似片段）→ 上下文拼接 → LLM 生成答案 → 返回结构化响应
+            <img src="images/rag-flow.png" alt="RAG流程图" style="max-width: 100%; margin-top: 10px;">
+        </div>
+
+        <h3>产品说明</h3>
+        <ul>
+            <li>支持 PDF/文本上传，自动分块与向量化</li>
+            <li>支持自然语言提问，如“我祖父的出生年份？”</li>
+            <li>答案附带来源片段（可点击查看原文），增强可信度</li>
+            <li>支持多轮对话，保持上下文记忆</li>
+            <li>支持导出问答记录与族谱摘要</li>
+        </ul>
+
+        <h3>产品价值</h3>
+        <ul>
+            <li>让族谱研究从“专业门槛”变为“人人可用”</li>
+            <li>提升家族文化传承效率，增强情感连接</li>
+            <li>为后续扩展至“家谱图谱可视化”“跨家族关系分析”打下基础</li>
+        </ul>
     </section>
 
-    <!-- Prompt Lab 区块 -->
-    <section id="prompt-lab">
-      <h2>Prompt Lab – 族谱问答 Prompt 设计</h2>
-      <p>通过 System Prompt 约束模型行为，降低幻觉；User Prompt 明确上下文与输出格式。</p>
+    <section id="prompt">
+        <h2>Prompt Lab：族谱问答助手</h2>
+        
+        <h3>System Prompt（系统角色）</h3>
+        <div class="highlight">
+            你是一位专业的族谱研究员助手，擅长从历史文献中提取关键信息并回答用户问题。请基于提供的上下文（族谱内容）进行准确、有依据的回答。如果信息不足，请诚实说明，不要编造。回答需清晰、有条理，并标注信息来源段落。
+        </div>
 
-      <h3>System Prompt</h3>
-      <pre>
-你是一个专业的族谱知识问答助手。
-请严格遵守以下规则：
-1. 只允许根据【知识库】内容回答，绝对禁止编造。
-2. 如知识库无法回答，必须回复：“当前族谱未收录该信息。”
-3. 回答需简洁、专业，尽量注明出处（如“据《某氏家谱》第X卷”）。
-4. 若用户问题模糊，可礼貌请求澄清。
-      </pre>
-
-      <h3>User Prompt 模板</h3>
-      <pre>
-【知识库】
-{retrieved_passages}
-
-【用户问题】
-{user_question}
-
-【回答要求】
-- 先给结论
-- 再给依据
-- 最后说明信息是否确定
-      </pre>
+        <h3>User Prompt（用户提问模板）</h3>
+        <div class="highlight">
+            问题：{{用户输入的问题}}
+            上下文：{{检索到的相关族谱片段}}
+            请根据上述上下文，回答用户问题。要求：
+            - 答案简洁、准确、有依据
+            - 如需引用原文，请标注段落编号（如：第3段）
+            - 若信息不足，请回复“暂无足够信息”
+        </div>
     </section>
 
-    <!-- About Me 区块 -->
     <section id="about">
-      <h2>About Me</h2>
-      <p>
-        我有 <strong>2 年 UI 设计经验</strong>（族谱产品），<br>
-        1 年 <strong>兼任产品经理</strong>（负责需求梳理与原型设计），<br>
-        1 年 <strong>产品助理经验</strong>（中东支付，B 端业务）。
-      </p>
-      <p>
-        在族谱项目中，我意识到传统搜索无法解决复杂的亲缘关系查询痛点，
-        因此深入学习 RAG、Prompt 工程与 AI 产品落地。
-        现转型 <strong>AI Product Manager</strong>，致力于将 LLM 能力转化为可落地的产品功能。
-      </p>
-      <p>
-        📫 联系：[你的邮箱]<br>
-        🐙 GitHub：<a href="#">[你的GitHub链接]</a>
-      </p>
+        <h2>About Me：从 UI 到 AI PM 的转型之路</h2>
+        
+        <h3>我的背景</h3>
+        我原本是一名 UI/UX 设计师，拥有 3 年互联网产品设计经验，专注于用户研究与界面体验优化。在参与多个 AI 项目后，我被“产品如何用技术解决真实问题”所吸引，开始系统学习 AI 产品方法论，包括 RAG 架构、Prompt Engineering、模型评估等。
+
+        <h3>为什么转型 AI PM？</h3>
+        我希望从“设计界面”转向“设计智能体验”，用产品思维驱动技术落地，让 AI 真正服务于人。族谱问答助手是我第一个完整从 0 到 1 的 AI 产品实践，涵盖需求分析、架构设计、Prompt 优化、用户场景测试等环节。
+
+        <h3>我的优势</h3>
+        <ul>
+            <li><strong>用户洞察力</strong>：从 UI 背景出发，擅长挖掘用户真实需求</li>
+            <li><strong>技术理解力</strong>：能读懂 RAG、Prompt、向量数据库等技术原理</li>
+            <li><strong>产品落地能力</strong>：能将技术概念转化为可交付的产品功能</li>
+            <li><strong>学习与迭代</strong>：持续跟进 AI 产品趋势，快速适应变化</li>
+        </ul>
+
+        <h3>未来目标</h3>
+        成为能驾驭 AI 技术、以用户为中心的产品经理，打造有温度、有智能、有社会价值的 AI 产品。
     </section>
+
+    <div class="contact">
+        📫 联系：3262328026@qq.com
+        🐙 GitHub：<a href="https://github.com/zoey-cjj">zoey-cjj</a>
+        💼 作品集：<a href="https://zoey-cjj.github.io/ai-portfolio/">https://zoey-cjj.github.io/ai-portfolio/</a>
+    </div>
 
     <footer>
-      <p>© 2026 [你的名字]. All rights reserved.</p>
-      <a href="#top">返回顶部</a>
+        © 2025 Zoey. All rights reserved. | 本作品集仅用于求职展示，非商业用途。
     </footer>
-  </div>
+
+    <a href="#" class="back-to-top">↑ Top</a>
 
 </body>
 </html>
