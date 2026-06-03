@@ -3,204 +3,205 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AI Product Portfolio – Zoey</title>
+<title>AI PM Portfolio – Zoey</title>
 
 <style>
-/* ========== Glassmorphism Theme ========== */
+/* ===== Glassmorphism Extreme ===== */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.15);
-  --glass-border: rgba(255, 255, 255, 0.25);
-  --blur: 16px;
-  --primary: #6366f1;
-  --accent: #06b6d4;
-  --text: #f1f5f9;
-  --muted: #94a3b8;
+  --glass: rgba(255,255,255,0.08);
+  --glass-strong: rgba(255,255,255,0.14);
+  --border: rgba(255,255,255,0.18);
+  --blur: 18px;
+  --primary: #818cf8;
+  --accent: #22d3ee;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
-}
+* { box-sizing: border-box; font-family: Inter, system-ui, sans-serif; }
 
-/* 动态渐变背景 */
 body {
   margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #020617, #1e293b);
-  background-size: 400% 400%;
-  animation: bgMove 15s ease infinite;
+  background: radial-gradient(circle at 20% 20%, #0f172a, #020617, #000);
   color: var(--text);
-  line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-/* ========== Header ========== */
-header {
+/* ===== Cover ===== */
+.cover {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px;
 }
 
-header h1 {
-  font-size: 3rem;
+.cover h1 {
+  font-size: 3.6rem;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.subtitle {
-  color: var(--muted);
-  margin-top: 10px;
-  font-size: 1.1rem;
+.typing {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: var(--muted;
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 28ch;
+  animation: typing 4s steps(28), blink .6s step-end infinite;
 }
 
-/* ========== Navigation ========== */
-nav {
-  margin-top: 24px;
+@keyframes typing {
+  from { width: 0 }
+  to { width: 28ch }
 }
-nav a {
-  margin: 0 14px;
-  color: var(--text);
-  font-weight: 500;
-  position: relative;
-}
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background: var(--accent);
-  transition: 0.3s;
-}
-nav a:hover::after {
-  width: 100%;
+@keyframes blink {
+  50% { border-color: transparent }
 }
 
-/* ========== Glass Card ========== */
+/* ===== Container ===== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+/* ===== Glass Card ===== */
 .glass {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  border: 1px solid var(--border);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
   border-radius: 20px;
   padding: 36px;
   margin-bottom: 48px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .glass:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0,0,0,.45);
 }
 
-/* ========== Typography ========== */
-h2 {
-  font-size: 1.9rem;
-  margin-bottom: 20px;
+/* ===== Table of Contents ===== */
+.toc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.toc a {
+  display: block;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--glass-strong);
   color: #fff;
+  text-decoration: none;
+  transition: .3s;
 }
 
-h3 {
-  margin-top: 24px;
-  color: var(--accent);
+.toc a:hover {
+  background: var(--primary);
 }
 
-p {
-  color: var(--muted);
-}
+/* ===== Typography ===== */
+h2 { font-size: 1.9rem; margin-bottom: 16px; color: #fff; }
+h3 { color: var(--accent); margin-top: 24px; }
+p { color: var(--muted); }
+ul { padding-left: 20px; color: var(--muted); }
 
-ul {
-  padding-left: 20px;
-  color: var(--muted);
-}
-
-/* ========== Footer ========== */
+/* ===== Footer ===== */
 footer {
   text-align: center;
-  padding: 40px 0;
+  padding: 40px;
   color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* ========== Scroll Animation ========== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: none;
+  font-size: .9rem;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<header>
+<!-- ===== Cover ===== -->
+<section class="cover">
   <h1>AI Product Portfolio</h1>
-  <p class="subtitle">Zoey · UI Designer → AI Product Manager</p>
-  <nav>
-    <a href="#case1">Case 1 族谱 RAG</a>
-    <a href="#case2">Case 2 支付风控</a>
-    <a href="#about">About Me</a>
-  </nav>
-</header>
-
-<!-- Case 1 -->
-<section id="case1" class="glass fade-in">
-  <h2>Case 1｜族谱知识问答助手（主 Case）</h2>
-  <p>
-    基于 RAG 架构，将非结构化族谱文本转化为可对话的知识库，实现自然语言问答与来源追溯。
+  <div class="typing">LLM · RAG · Copilot · Evaluation</div>
+  <p style="margin-top:30px; color:var(--muted);">
+    Zoey · 从 UI / 支付 PM 到 AI Product Manager
   </p>
 </section>
 
-<!-- Case 2 -->
-<section id="case2" class="glass fade-in">
-  <h2>Case 2｜中东支付风控助手（辅 Case）</h2>
+<!-- ===== Table of Contents ===== -->
+<div class="container">
+  <h2>📂 目录</h2>
+  <div class="toc">
+    <a href="#about">👤 关于我</a>
+    <a href="#overview">📌 项目总览</a>
+    <a href="#case1">📘 Case 1：智能问答系统</a>
+    <a href="#case2">📘 Case 2：内容生成 Copilot</a>
+    <a href="#eval">🧪 评测体系</a>
+  </div>
+</div>
+
+<!-- ===== About ===== -->
+<section id="about" class="container glass">
+  <h2>👤 关于我</h2>
   <p>
-    面向 B 端支付场景，用 AI 辅助风控规则解读与交易审核，降低人工成本与误杀率。
+    擅长将大模型能力转化为可落地、可评估的业务产品。<br/>
+    核心能力：Prompt / RAG / Agent / Eval / PRD / 指标体系。
   </p>
 </section>
 
-<!-- About -->
-<section id="about" class="glass fade-in">
-  <h2>About Me</h2>
+<!-- ===== Project Overview ===== -->
+<section id="overview" class="container glass">
+  <h2>📌 项目总览</h2>
+  <ul>
+    <li><strong>Case 1：智能问答系统（RAG）</strong> — 企业知识库，降低人工成本</li>
+    <li><strong>Case 2：内容生成 Copilot</strong> — 运营提效，提升生产效率</li>
+    <li><strong>Case 3：AI 风控助手</strong> — 安全合规，降低漏审风险</li>
+  </ul>
+</section>
+
+<!-- ===== Case 1 ===== -->
+<section id="case1" class="container glass">
+  <h2>📘 Case 1：智能问答系统（RAG）</h2>
+  <h3>背景 & 目标</h3>
   <p>
-    2 年 UI 设计 · 1 年兼任 PM · 1 年支付产品助理<br/>
-    现专注 AI 产品落地，探索 RAG / Prompt / Agent 在实际业务中的应用。
+    客服人力占运营成本 35%，70% 问题重复。<br/>
+    目标：自动解决率 ≥ 70%，幻觉率 ≤ 5%。
   </p>
+  <h3>系统简图</h3>
+  <p>
+    用户输入 → 意图识别 → 检索(RAG) → LLM 生成 → 安全过滤 → 输出
+  </p>
+</section>
+
+<!-- ===== Case 2 ===== -->
+<section id="case2" class="container glass">
+  <h2>📘 Case 2：内容生成 Copilot</h2>
+  <p>
+    面向运营场景，通过 Prompt + 模板 + 人工审核闭环，实现高效内容生产。
+  </p>
+</section>
+
+<!-- ===== Eval ===== -->
+<section id="eval" class="container glass">
+  <h2>🧪 评测体系</h2>
+  <ul>
+    <li>准确性 / 完整性 / 幻觉 / 合规性</li>
+    <li>Golden Set：20 条典型问题</li>
+    <li>评分 Rubric：5 / 3 / 1 分制</li>
+  </ul>
 </section>
 
 <footer>
-  © 2025 Zoey · Built with Glassmorphism
+  © 2025 Zoey · AI Product Portfolio
 </footer>
-
-</div>
-
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("show");
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
